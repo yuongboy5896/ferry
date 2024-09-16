@@ -11,7 +11,7 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
-	uuid "github.com/satori/go.uuid"
+	uuid "github.com/google/uuid"
 	"github.com/spf13/viper"
 )
 
@@ -116,7 +116,7 @@ func CreateTask(c *gin.Context) {
 		return
 	}
 
-	uuidValue := uuid.Must(uuid.NewV4(), err)
+	uuidValue := uuid.Must(uuid.New(), err)
 	fileName := fmt.Sprintf("%v/%v-%v-%v",
 		viper.GetString("script.path"),
 		taskValue.Name,
@@ -198,12 +198,12 @@ func UpdateTask(c *gin.Context) {
 // 删除任务
 func DeleteTask(c *gin.Context) {
 	fullName := c.DefaultQuery("full_name", "")
-	if fullName == "" {
+	if fullName == "" || strings.Contains(fullName, "/") {
 		app.Error(c, -1, errors.New("参数不正确，请确定参数full_name是否传递"), "")
 		return
 	}
 
-	err := os.Remove(fmt.Sprintf("%v/%v", viper.GetString("script.path"), fullName))
+	err := os.RemoveAll(fmt.Sprintf("%v/%v", viper.GetString("script.path"), fullName))
 	if err != nil {
 		app.Error(c, -1, err, fmt.Sprintf("删除文件失败，%v", err.Error()))
 		return

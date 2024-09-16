@@ -10,7 +10,8 @@ RUN git clone https://gitee.com/yllan/ferry_web.git
 
 WORKDIR ferry_web
 
-RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
+RUN npm install -g cnpm --registry=https://registry.npmmirror.com
+RUN npm uninstall node-sass && npm i -D sass --registry=https://registry.npmmirror.com
 RUN cnpm install
 RUN echo $'# just a flag\n\
 ENV = \'production\'\n\n\
@@ -19,7 +20,7 @@ VUE_APP_BASE_API = \'\''\
 > .env.production
 RUN npm run build:prod
 
-FROM golang:1.15 AS build
+FROM golang:1.18 AS build
 
 WORKDIR /opt/workflow/ferry
 COPY . .
@@ -30,6 +31,10 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o ferry .
 FROM alpine AS prod
 
 MAINTAINER lanyulei
+
+RUN echo -e "http://mirrors.aliyun.com/alpine/v3.11/main\nhttp://mirrors.aliyun.com/alpine/v3.11/community" > /etc/apk/repositories \
+    && apk add -U tzdata \
+    && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 
 
 WORKDIR /opt/workflow/ferry
 

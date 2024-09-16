@@ -17,6 +17,10 @@
 
 ## 基于Gin + Vue + Element UI前后端分离的工单系统
 
+新版工单演示地址（非开源）：[http://fdevops.com:8000](http://fdevops.com:8000)
+
+账号密码：lanyulei / lanyulei
+
 **流程中心**
 
 通过灵活的配置流程、模版等数据，非常快速方便的生成工单流程，通过对流程进行任务绑定，实现流程中的钩子操作，目前支持绑定邮件来通知处理，当然为兼容更多的通知方式，也可以自己写任务脚本来进行任务通知，可根据自己的需求定制。
@@ -44,8 +48,6 @@
 
 * ferry工单系统需要的软件准备 https://www.bilibili.com/video/BV1sA411s7jE
 * ferry源代码下载后第一次运行 https://www.bilibili.com/video/BV1oy4y1v7LR
-
-官网：[http://ferry.fdevops.com](http://ferry.fdevops.com)
 
 ```
 需注意，因有人恶意删除演示数据，将可删除的数据全都删除了，因此演示的Demo上已经将删除操作的隐藏了。
@@ -79,12 +81,12 @@
 <ul><li>用户、角色、岗位的增删查改，批量删除，多条件搜索</li><li>角色、岗位数据导出Excel</li><li>重置用户密码</li><li>维护个人信息，上传管理头像，修改当前账户密码</li><li>部门的增删查改</li><li>菜单目录、跳转、按钮及API接口的增删查改</li><li>登陆日志管理</li><li>左菜单权限控制</li><li>页面按钮权限控制</li><li>API接口权限控制</li></ul>
 <!-- /wp:list -->
 
-快速安装部署:  
+快速安装部署:
 ```
 bash build.sh install
 ```
 
-启动服务： 
+启动服务：
 ```
 bash build.sh start
 ```
@@ -100,31 +102,37 @@ bash build.sh start
 群里只要不说骂人、侮辱人之类人身攻击的话，您就可以畅所欲言，有bug我及时修改，使用中有不懂的，我会及时回复，感谢。
 
 <p>
-  <img width="300" src="https://www.fdevops.com/wp-content/uploads/2021/12/1640275868-2021122316110810.png">
+  <img width="300" src="https://www.fdevops.com/wp-content/uploads/2024/02/1708914069-WechatIMG84.jpg">
 </p>
 
-QQ群 3：767524537
+QQ群 5：361011819
 
 [兰玉磊的技术博客](https://www.fdevops.com/)
 
-### 个人微信，添加好友请描述地区、公司及名字，例如：北京-国美-xxx。
+### 个人微信，添加好友请描述地区、公司及名字，例如：北京-微软-xxx。
 
-微信号：fdevops
+本项目现成立了付费的 VIP 交流群，赞助金额达到 299 以上，我将邀请进入付费交流群，本群能更快更优先的协助解决问题。
 
-<p>
-  <img width="300" src="https://www.fdevops.com/wp-content/uploads/2021/03/1616727212-WechatIMG3.jpeg">
-</p>
+但是有一点需要跟大家明确好，因为本人需要上班，所以工作日的白天，小问题的话，我会尽快协助解决，大问题需晚上处理呢，大家请按需选择，是否进入，感谢支持。
+
+目前正在使用最新技术重构最新版，最新本也将优先在本群发布。
+
+本人微信：lanyulei666
+
+## 战略合作
+
+* [VForm 一款高效的Vue 2 / Vue3 的低代码表单可视化设计，一键生成源码，享受更多摸鱼时间](https://vform666.com/vform3.html)
 
 ## 特别感谢
-[go-amdin # 不错的后台开发框架](https://github.com/go-admin-team/go-admin)
+* [go-amdin # 不错的后台开发框架](https://github.com/go-admin-team/go-admin)
 
-[vue-element-admin # 不错的前端模版框架](https://github.com/PanJiaChen/vue-element-admin)
+* [vue-element-admin # 不错的前端模版框架](https://github.com/PanJiaChen/vue-element-admin)
 
-[vue-form-making # 表单设计器，开源版本比较简单，如果有能力的话可以自己进行二次开发 ](https://github.com/GavinZhuLei/vue-form-making.git)
+* [vue-form-making # 表单设计器，开源版本比较简单，如果有能力的话可以自己进行二次开发 ](https://github.com/GavinZhuLei/vue-form-making.git)
 
-[wfd-vue # 流程设计器](https://github.com/guozhaolong/wfd-vue)
+* [wfd-vue # 流程设计器](https://github.com/guozhaolong/wfd-vue)
 
-[machinery # 任务队列](https://github.com/RichardKnop/machinery.git)
+* [machinery # 任务队列](https://github.com/RichardKnop/machinery.git)
 
 等等...
 
@@ -148,14 +156,6 @@ QQ群 3：767524537
 
 ## License
 
-开源不易，请尊重作者的付出，感谢。
+[MIT](https://github.com/lanyulei/ferry/blob/master/LICENSE)
 
-在此处声明，本系统目前不建议商业产品使用，因本系统使用的`流程设计器`未设置开源协议，`表单设计器`是LGPL v3的协议。
-
-因此避免纠纷，不建议商业产品使用，若执意使用，请联系原作者获得授权。
-
-再次声明，若是未联系作者直接将本系统使用于商业产品，出现的商业纠纷，本系统概不承担，感谢。
-
-[LGPL-3.0](https://github.com/lanyulei/ferry/blob/master/LICENSE)
-
-Copyright (c) 2021 lanyulei
+Copyright (c) 2022 lanyulei
